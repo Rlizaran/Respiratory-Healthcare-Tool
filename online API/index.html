@@ -7,7 +7,7 @@
     <title>Document</title>
 
     <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="static/css/style.css"> -->
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
@@ -15,10 +15,16 @@
         crossorigin="anonymous"/>
 </head>
 <body>
+    <input type="text" placeholder="Search...." onchange="myHandler();" onkeypress="this.onchange" oninput="this.onchange" id="ZipCode"/>
+
+
     <!-- D3 script -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <!-- JavaScript -->
     <script type='text/javascript' src='static/js/api_call.js'></script>
+
+    <!-- JavaScript -->
+    <script type='text/javascript' src='static/js/random_date'></script>
 </body>
 </html>
