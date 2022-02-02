@@ -1,58 +1,35 @@
 function myHandler(){
     var ZIP_CODE = document.getElementById("ZipCode").value;
     var dates = loop();
-    const aqilist = []
-    for (let i=0; i<10; i++){
+
+    var aqilist = [];
+
+    for (let i=0; i<dates.length; i++){
         var DATE = dates[i]
         url = `https://www.airnowapi.org/aq/observation/zipCode/historical/?format=application/json&zipCode=${ZIP_CODE}&date=${DATE}T00-0000&API_KEY=6B506C96-231C-4375-B929-676EFE4F7514`;
         d3.json(url).then(features => {
-            var aqi = parseInt(features[0].AQI);
+            var aqi = features[0].AQI; 
             aqilist.push(aqi);
         });
-    }
-    var numbers = calculateAQI(aqilist);
-    console.log(numbers)
-    var aqiMax = numbers[0]
-    var aqiMin = numbers[1]
-    var aqiAverage = numbers[2]
-    console.log(aqiMax)
-    console.log(aqiMin)
-    console.log(aqiAverage)
-    console.log(AirPollution(aqiAverage))
+    };
+
+    var aqiMax = maxValue(aqilist);
+    var aqiMin = minValue(aqilist);
+    var aqiAverage = calculateAverage(aqilist);
+
+    console.log(AirPollution(aqiAverage));
 };
 
 function loop(){
     const dates = [];
     for (let i=0; i<10; i++){
-        var date = randomDate("2018/01/01",);
+        var date = randomDate("2012/01/01",);
         dates.push(date);
     }
     return dates;
 }
 
-function calculateAQI(aqilist){
-    console.log(aqilist)
-    var max = Math.max(aqilist)
-    var min = Math.min(aqilist)
-    var aqiAverage = calculateAverage(aqilist)
-    return [max, min, aqiAverage]
-}
-
-function calculateAverage(array){
-    var total = 0;
-    var count = 0;
-
-    array.forEach(function(item, index){
-        total += item;
-        count++;
-        
-    });
-
-    return total / count;
-}
-
-
-function AirPollution (aqiAverage){
+function AirPollution (aqi){
     if (aqi < 42){
         return [1, "Good" ,'#00FF00'];
     }
