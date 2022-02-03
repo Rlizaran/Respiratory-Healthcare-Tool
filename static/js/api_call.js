@@ -74,7 +74,7 @@ function calculateAQI(aqi_data){
     console.log(color);
     document.getElementById("MeanAQI").innerHTML = cat;
 
-    let element1 = document.getElementById("MeanAQI").innerHTML;
+    let element1 = document.getElementById("MeanAQI");
     element1.style.color = color;
     element1.style.fontWeight = "bold";
 
