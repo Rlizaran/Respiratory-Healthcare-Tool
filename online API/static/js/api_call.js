@@ -63,7 +63,7 @@ function calculateAQI(aqi_data){
     var min = Math.min(...aqi_data)
     var aqiAverage = calculateAverage(aqi_data)
 
-    print(AirPollution(aqiAverage))
+    console.log(AirPollution(aqiAverage))
 
     console.log(max);
     console.log(min);
