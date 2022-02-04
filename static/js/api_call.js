@@ -12,7 +12,7 @@ async function myHandler() {
         date_list_url.push(url)
     }
 
-    console.log(date_list_url)
+    
     
     const r1 = await fetch(date_list_url[0])
     const r2 = await fetch(date_list_url[1])
@@ -39,7 +39,9 @@ async function myHandler() {
 
     const json_list = [j1,j2,j3,j4,j5,j6,j7,j8,j9,j10];
     for (let i=0; i < json_list.length; i++){
+        if (typeof json_list[i][0] !== 'undefined'){
             aqi_data.push(json_list[i][0].AQI);
+        }
     }
 
     calculateAQI(aqi_data);
@@ -77,6 +79,20 @@ function calculateAQI(aqi_data){
     let element1 = document.getElementById("MeanAQI");
     element1.style.color = color;
     element1.style.fontWeight = "bold";
+
+    var BoxData = Category(max);
+    var cat_max = max;
+    document.getElementById("MaxAQI").innerHTML = cat_max;
+
+    var BoxData = Category(min);
+    var cat_min = min;
+    document.getElementById("MinAQI").innerHTML = cat_min;
+
+    var BoxData = Category(aqiAverage);
+    var cat_avg = aqiAverage;
+    document.getElementById("MeanAQIValue").innerHTML = cat_avg;
+
+    
 
     return [max, min, aqiAverage]
 }

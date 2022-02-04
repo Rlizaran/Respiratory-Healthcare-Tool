@@ -25,13 +25,13 @@ asthma = db['asthma']
 @app.route('/')
 def home():
     # Return the template
-    return render_template('index.html')
+    return render_template('index_KLB020322.html')
 
 
-@app.route('/index.html')
+@app.route('/index_KLB020322.html')
 def index():
     # Return the template
-    return render_template('index.html')
+    return render_template('index_KLB020322.html')
 
 
 @app.route('/dashboard.html')
@@ -59,14 +59,18 @@ def predic_asthma():
     if request.method == "POST":
 
         Age_Group = request.form.get('Age_Group')
-        air_quality = request.form.get('air_quality')
+        air_quality_max = request.form.get('MaxAQI')
+        air_quality_min = request.form.get('MinAQI')
+        air_quality_average = request.form.get('MeanAQI')
         variables = [Age_Group,
-                     air_quality]
+                     air_quality_max,
+                     air_quality_min,
+                     air_quality_average]
         predict = model_load_asthma(variables)
 
-        return render_template("index.html", pred=variables, prediction=predict)
+        return render_template("index_KLB020322.html", pred=variables, prediction=predict)
     else:
-        return render_template("index.html")
+        return render_template("index_KLB020322.html")
 
 
 @app.route('/send/cancer', methods=["GET", "POST"])
@@ -85,9 +89,9 @@ def predic_cancer():
                      Balanced_diet, Air_pollution]
         predict = model_load_cancer(variables)
 
-        return render_template("index.html", pred=variables, prediction=predict)
+        return render_template("index_KLB020322.html", pred=variables, prediction=predict)
     else:
-        return render_template("index.html")
+        return render_template("index_KLB020322.html")
 
 
 @ app.route("/data/cancer")
