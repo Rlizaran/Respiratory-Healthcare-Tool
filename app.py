@@ -10,17 +10,17 @@ from flask_pymongo import PyMongo
 app = Flask(__name__)
 
 # Use PyMongo to establish Mongo connection
-client = MongoClient("mongodb://localhost:27017")
-db = client['air-quality']
+#client = MongoClient("mongodb://localhost:27017")
+#db = client['air-quality']
 
-# os.environ.get('MONGO_URI', '')
-# app.config["MONGO_URI"] =
-#app.config['MONG_DBNAME'] = 'e-commerce'
-#mongo = PyMongo(app)
+#
+app.config["MONGO_URI"] = os.environ.get('MONGO_URI', '')
+app.config['MONG_DBNAME'] = 'air-quality'
+mongo = PyMongo(app)
 
 # creating collection (add mongo)
-cancer = db['cancer']
-asthma = db['asthma']
+cancer = mongo.db['cancer']
+asthma = mongo.db['asthma']
 
 
 @app.route('/')
