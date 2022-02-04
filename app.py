@@ -55,7 +55,7 @@ def data():
     return render_template('data.html')
 
 
-@app.route('/send/asthma', methods=["GET", "POST"])
+@app.route('/asthma', methods=["GET", "POST"])
 def predic_asthma():
     if request.method == "POST":
 
@@ -68,15 +68,15 @@ def predic_asthma():
                      air_quality_max,
                      air_quality_min,
                      air_quality_average]
-        #predict = model_load_asthma(variables)
+        predict = model_load_asthma(variables)
 
-        # prediction=predict)
-        return render_template("/index.html", pred=variables)
+        #
+        return render_template("/index.html", pred=variables, prediction=predict)
     else:
         return render_template("/index.html")
 
 
-@app.route('/send/cancer', methods=["GET", "POST"])
+@app.route('/cancer', methods=["GET", "POST"])
 def predic_cancer():
     if request.method == "POST":
 
