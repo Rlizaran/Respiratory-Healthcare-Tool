@@ -1,3 +1,4 @@
+from traceback import print_tb
 from flask import Flask, request, render_template, redirect, jsonify
 import json
 import os
@@ -62,6 +63,7 @@ def predic_asthma():
         air_quality_max = request.form.get('MaxAQI')
         air_quality_min = request.form.get('MinAQI')
         air_quality_average = request.form.get('MeanAQI')
+        print(air_quality_max)
         variables = [Age_Group,
                      air_quality_max,
                      air_quality_min,
@@ -69,9 +71,9 @@ def predic_asthma():
         #predict = model_load_asthma(variables)
 
         # prediction=predict)
-        return render_template("index.html", pred=variables)
+        return render_template("/index.html", pred=variables)
     else:
-        return render_template("index.html")
+        return render_template("/index.html")
 
 
 @app.route('/send/cancer', methods=["GET", "POST"])
@@ -83,17 +85,17 @@ def predic_cancer():
         Smoker = request.form.get('Smoker')
         Fatigue = request.form.get('Fatigue')
         Alchol_use = request.form.get('Alchol_use')
-        Balanced_diet = request.form.get('ProductRelated_Duration')
-        Air_pollution = request.form.get('Air_pollution')
+        Balanced_diet = request.form.get('Balanced_diet')
+        Air_pollution = request.form.get('air')
         variables = [Coughing, Obesity,
                      Smoker, Fatigue, Alchol_use,
                      Balanced_diet, Air_pollution]
         #predict = model_load_cancer(variables)
 
         # , prediction=predict)
-        return render_template("index.html", pred_canc=variables)
+        return render_template("/index.html", pred_canc=variables)
     else:
-        return render_template("index.html")
+        return render_template("/index.html")
 
 
 @ app.route("/data/cancer")

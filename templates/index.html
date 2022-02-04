@@ -28,9 +28,7 @@
                                 
                                 <h2>AirQualityIndex</h2>
                                 <h3 id="MeanAQI"></h3>
-                                <input type="hidden" id="MeanAQIValue" value="hidden"/>
-                                <input type="hidden" id="MaxAQI" value="hidden"/>
-                                <input type="hidden" id="MinAQI" value="hidden"/>
+                                
                                 
                             </div>
                             
@@ -105,8 +103,8 @@
 
                                 <div class="mb-3  lead text-white">
                                     <label  for="Air_Pollution">Air Pollution</label>
-                                    <select id="Air_Pollution" name="Air_Pollution">
-                                        <option id="air" value="hidden"></option>
+                                    <select id="Air_Pollution" name="air">
+                                        <option id="air" name='air' value="hidden"></option>
                                     </select>  
                                 </div>
 
@@ -156,7 +154,10 @@
                                     <select id="Age_Group" name="Age_Group">
                                         <option value=1>Above 18</option>
                                         <option value=0>Below 18</option>
-                                    </select>              
+                                    </select>
+                                <input type="hidden" name='MeanAQI' id="MeanAQIValue" value="hidden"/>
+                                <input type="hidden" name="MaxAQI" id="MaxAQI" value="hidden"/>
+                                <input type="hidden" name="MinAQI" id="MinAQI" value="hidden"/>              
                         </div>
                         
                     </div>
