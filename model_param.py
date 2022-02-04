@@ -11,7 +11,7 @@ def model_load_cancer(variables):
         return "Please Enter the Zip Code of Patients First!!!!"
     # loading model
     elif (variables[0] != int) or (variables[0] != int) or (variables[0] != int):
-        return "Please Enter the Above Information First!!!!"
+        return "Please First Enter the Zip Code  And All Above Information !!!!"
     else:
         final_variables = [variables]
         trained_model = joblib.load('model_cancer.pkl')
