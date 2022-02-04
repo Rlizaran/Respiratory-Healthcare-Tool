@@ -60,20 +60,13 @@ function loop(){
 
 
 function calculateAQI(aqi_data){
-    console.log(aqi_data)
     var max = Math.max(...aqi_data)
     var min = Math.min(...aqi_data)
     var aqiAverage = calculateAverage(aqi_data)
     
-    console.log(max);
-    console.log(min);
-    console.log(aqiAverage);
-
     var BoxData = Category(aqiAverage);
-    console.log(BoxData);
     var cat = BoxData[0];
     var color = BoxData[1];
-    console.log(color);
     document.getElementById("MeanAQI").innerHTML = cat;
 
     let element1 = document.getElementById("MeanAQI");
@@ -82,15 +75,15 @@ function calculateAQI(aqi_data){
 
     var BoxData = Category(max);
     var cat_max = max;
-    document.getElementById("MaxAQI").innerHTML = cat_max;
+    document.getElementById("MaxAQI").setAttribute('value',cat_max)
 
     var BoxData = Category(min);
     var cat_min = min;
-    document.getElementById("MinAQI").innerHTML = cat_min;
+    document.getElementById("MinAQI").setAttribute('value',cat_min)
 
     var BoxData = Category(aqiAverage);
     var cat_avg = aqiAverage;
-    document.getElementById("MeanAQIValue").innerHTML = cat_avg;
+    document.getElementById("MeanAQIValue").setAttribute('value',cat_avg)
 
     
 
