@@ -60,32 +60,37 @@ function loop(){
 
 
 function calculateAQI(aqi_data){
-    var max = Math.max(...aqi_data)
-    var min = Math.min(...aqi_data)
-    var aqiAverage = calculateAverage(aqi_data)
-    
+
+    var max = Math.max(...aqi_data);
+    var min = Math.min(...aqi_data);
+    var aqiAverage = calculateAverage(aqi_data);
+
+    var BoxData = Category(max);
+    var cat_max = max;
+    document.getElementById("MaxAQI").setAttribute('value',cat_max);
+
+    var BoxData = Category(min);
+    var cat_min = min;
+    document.getElementById("MinAQI").setAttribute('value',cat_min);
+
     var BoxData = Category(aqiAverage);
+    var cat_avg = aqiAverage;
+    document.getElementById("MeanAQIValue").setAttribute('value',cat_avg);
+
+    var BoxData = Category(aqiAverage);
+    var air_pollution = AirPollution(aqiAverage);
+    var air = air_pollution[0];
     var cat = BoxData[0];
     var color = BoxData[1];
     document.getElementById("MeanAQI").innerHTML = cat;
+    document.getElementById("air").innerHTML = air;
+
+    let element2 = document.getElementById("air");
+    element2.setAttribute('value',air);
 
     let element1 = document.getElementById("MeanAQI");
     element1.style.color = color;
     element1.style.fontWeight = "bold";
-
-    var BoxData = Category(max);
-    var cat_max = max;
-    document.getElementById("MaxAQI").setAttribute('value',cat_max)
-
-    var BoxData = Category(min);
-    var cat_min = min;
-    document.getElementById("MinAQI").setAttribute('value',cat_min)
-
-    var BoxData = Category(aqiAverage);
-    var cat_avg = aqiAverage;
-    document.getElementById("MeanAQIValue").setAttribute('value',cat_avg)
-
-    
 
     return [max, min, aqiAverage]
 }
