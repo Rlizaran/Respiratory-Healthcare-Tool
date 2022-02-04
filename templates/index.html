@@ -1,44 +1,36 @@
 {% extends "layout.html" %}
 {% block body %}
 <!--Home-->
-<section id="tal" class="bg-dark text-light p-3 mt-5 text-center text-sm-start">
-    <div>
-        <h3 class=" p-3 text-warning text-center"></h3>
+<section id="tal" class="bg-dark text-light p-1 mt-5 text-center text-sm-start">
+    <div class="p-4">
+        <h3 class=" p-1 text-warning text-center">Welcome to the Respiratory HealthCare Tool Website</h3>
+    </div>
+    <div class=' row bg-success'>
+        <div class="col-md-9">
+            <h2 class="  text-warning text-center   p-3">Please Enter the Patient's Zip Code</h2>
+            <div class=" lead text-center text-white">
+                <label  for="Lat">ZIP CODE</label>
+                <input type="text" onchange="myHandler();" onkeypress="this.onchange" oninput="this.onchange" id="ZipCode"/>
+            </div>
+            <div class="mb-3  lead text-white">
+                <br>
+                
+                <h2>AirQualityIndex</h2>
+                <h1 id="MeanAQI"></h1>
+                
+                
+            </div>
+        </div>
+        <div class="col-md-3">
+            <image src="{{url_for('static',filename = 'Images/health1.jpeg')}}" ></image>
+        </div>
+        
     </div>
     <div class="sidebar">
         <div class="d-lg-flex">
             <div class="container fluid">
-                <h3 class=" p-1 text-success text-center">Summary</h3>
+                
                 <div>
-                    <p class="text-white">
-                    </p>
-                    <div class='bg-secondary p-3'>
-                    <h4 class="text-center text-warning"></h4>
-                    <h5 class="text-warning"> </h5>
-                    </div>
-                    
-                    <div class='bg-black'>
-                            <h4 class="text-success text-center">Please enter the patient's Zip Code</h4>
-                            <div class=" lead text-white">
-                                <label  for="Lat">Zip Code</label>
-                                <input type="text" onchange="myHandler();" onkeypress="this.onchange" oninput="this.onchange" id="ZipCode"/>
-                            </div>
-                            <div class="mb-3  lead text-white">
-                                <br>
-                                
-                                <h2>AirQualityIndex</h2>
-                                <h3 id="MeanAQI"></h3>
-                                
-                                
-                            </div>
-                            
-                            <!-- Form submit button -->
-                            
-                        
-
-
-
-                    </div>
                     <div class="container p-2 ">
                         <h2 class='text-center'>Model Prediction for Cancer</h2>
                         <div class= "bg-black" >
@@ -167,22 +159,23 @@
                         </div>
                     </form>
                     <div class=" row justify-content-md-center">
-                        <h3>Air quality index of your area is: {{ pred[] }} </h3>
+                        <h3>Air quality index of your area is: {{ pred }} </h3>
               
                   </div>
 
                     <h3 class='pt-4'> {{ prediction }}</h3>
                 </div>
-                <div class='bg-black p-3'>
-                    <h4 class="text-center text-warning">Conclusion</h4>
-                    <h5 class="text-white"> </h5>
-                    </div>
+
       
             </div>
             
         </div> 
     </div>
 </section>
+<div class='bg-info p-3'>
+    <h2 class="text-center text-warning">Conclusion</h2>
+    <h5 class="text-white"> </h5>
+</div>
 
 <footer>
     <p>Copyright &copy; project4</p>
