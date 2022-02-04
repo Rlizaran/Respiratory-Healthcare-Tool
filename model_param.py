@@ -11,11 +11,11 @@ def model_load_cancer(variables):
     trained_model = joblib.load('model_cancer.pkl')
     prediction = trained_model.predict(final_variables)
     if prediction == [0]:
-        return "Based on our trained model it looks like 'You may have very low chance of having cancer'"
+        return "There is very low chance of having cancer"
     elif prediction == [1]:
-        return "Based on our trained model it looks like 'You may have medium chance of having cancer'"
+        return "There is medium chance of having cancer"
     else:
-        return "Based on our trained model it looks like 'You may have very high chance of having cancer'"
+        return "There is very high chance of having cancer"
 
 
 def model_load_asthma(variables):

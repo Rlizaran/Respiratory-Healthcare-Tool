@@ -50,7 +50,7 @@
                             <div class='p-3'>
                             <form action = "/cancer" method = "post">
                                 <div class="mb-3  lead text-white">
-                                    <label  for="Monthly Owner Cost">How bad is your Coughing(1-8)</label>
+                                    <label  for="Monthly Owner Cost">Coughing of blood(1-8)</label>
                                     <input  type="number" step="any" name="Coughing" id="Coughing" />                
                                 </div>
                                 <div class="mb-3  lead text-white">
@@ -67,7 +67,7 @@
                                     </select>  
                                 </div>
                                 <div class="mb-3  lead text-white">
-                                    <label  for="Lng">Smoker</label>
+                                    <label  for="Lng">Smoking</label>
                                     <select id="Smoker" name="Smoker">
                                         <option value=1>Never smokes</option>
                                         <option value=2>Rarely smokes</option>
@@ -116,11 +116,11 @@
                             </form>
 
                             <div class=" row justify-content-md-center">
-                                <h3>List of entered values{{ pred_canc }}</h3>
+                               
                       
                           </div>
 
-                             <!--<h3 class='pt-4'> {{ prediction }}</h3>-->
+                             <h3 class='pt-4'> {{ prediction_cancer }}</h3>
                         </div>
                         
                     </div>

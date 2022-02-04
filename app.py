@@ -90,10 +90,10 @@ def predic_cancer():
         variables = [Coughing, Obesity,
                      Smoker, Fatigue, Alchol_use,
                      Balanced_diet, Air_pollution]
-        #predict = model_load_cancer(variables)
+        predict = model_load_cancer(variables)
 
-        # , prediction=predict)
-        return render_template("/index.html", pred_canc=variables)
+        #
+        return render_template("/index.html", pred_canc=variables, prediction_cancer=predict)
     else:
         return render_template("/index.html")
 
