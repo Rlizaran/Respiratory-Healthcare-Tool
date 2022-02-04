@@ -2,11 +2,21 @@
 {% block body %}
 <!--Home-->
 <section id="tal" class="bg-dark text-light p-1 mt-5 text-center text-sm-start">
-    <div class="p-4">
-        <h3 class=" p-1 text-warning text-center">Welcome to the Respiratory HealthCare Tool Website</h3>
+    <div class="row p-4">
+        
+        <div class="col-md-7">
+            <h2 class=" p-1 text-warning text-center">Welcome to the Respiratory HealthCare Tool Website</h2>
+              <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores totam sit amet repudiandae ipsam quibusdam aperiam blanditiis laboriosam. Atque debitis eos voluptatum iste temporibus, quos vel illum illo porro. Earum illum deleniti ratione consequuntur illo, minima odio optio, esse, dicta sapiente quam animi similique rem sequi omnis quae at. Aspernatur neque pariatur rem expedita magnam? Incidunt neque consequuntur libero modi impedit quam laborum quibusdam, inventore ratione iste suscipit facere dolore dolores non exercitationem, minima sit ex recusandae error. Cum illo ipsa quas reprehenderit iusto asperiores, cupiditate velit quo aliquam ex. Ex aut ipsum dignissimos illum voluptate mollitia excepturi quibusdam dolores!
+              </p>
+        </div>
+        <div class="col-md-5">
+            <image src="{{url_for('static',filename = 'Images/health.png')}}" ></image>
+        </div>
     </div>
+
     <div class=' row bg-success'>
-        <div class="col-md-9">
+        <div class="col-md-5">
             <h2 class="  text-warning text-center   p-3">Please Enter the Patient's Zip Code</h2>
             <div class=" lead text-center text-white">
                 <label  for="Lat">ZIP CODE</label>
@@ -14,17 +24,13 @@
             </div>
             <div class="mb-3  lead text-white">
                 <br>
-                
                 <h2>AirQualityIndex</h2>
                 <h1 id="MeanAQI"></h1>
-                
-                
             </div>
         </div>
-        <div class="col-md-3">
-            <image src="{{url_for('static',filename = 'Images/health1.jpeg')}}" ></image>
+        <div class="col-md-7">
+            <image src="{{url_for('static',filename = 'Images/air.png')}}" ></image>
         </div>
-        
     </div>
     <div class="sidebar">
         <div class="d-lg-flex">
@@ -106,15 +112,11 @@
                                     <button class="btn btn-success btn-lg" type="submit" value="submit">Submit</button>
                                 </div>
                             </form>
-
                             <div class=" row justify-content-md-center">
-                               
-                      
                           </div>
 
                              <h3 class='pt-4'> {{ prediction_cancer }}</h3>
                         </div>
-                        
                     </div>
 
                     <div class="container">
