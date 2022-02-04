@@ -20,7 +20,7 @@ def model_load_cancer(variables):
 
 def model_load_asthma(variables):
     # using standardscaler for transformation
-    scaler = joblib.load('scaler.pkl')
+    scaler = joblib.load('scaler_asthma.pkl')
     X_scaler = scaler.transform([variables])
 
     test_data = scaler.transform(X_scaler)

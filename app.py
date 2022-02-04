@@ -66,9 +66,10 @@ def predic_asthma():
                      air_quality_max,
                      air_quality_min,
                      air_quality_average]
-        predict = model_load_asthma(variables)
+        #predict = model_load_asthma(variables)
 
-        return render_template("index.html", pred=variables, prediction=predict)
+        # prediction=predict)
+        return render_template("index.html", pred=variables)
     else:
         return render_template("index.html")
 
@@ -87,9 +88,10 @@ def predic_cancer():
         variables = [Coughing, Obesity,
                      Smoker, Fatigue, Alchol_use,
                      Balanced_diet, Air_pollution]
-        predict = model_load_cancer(variables)
+        #predict = model_load_cancer(variables)
 
-        return render_template("index.html", pred=variables, prediction=predict)
+        # , prediction=predict)
+        return render_template("index.html", pred_canc=variables)
     else:
         return render_template("index.html")
 
