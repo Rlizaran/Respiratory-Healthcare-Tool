@@ -7,7 +7,7 @@ The “Model Prediction for Cancer” model is used to predict a patient's risk 
 The “Model Prediction for Asthma” model is used to predict the patient’s emergency department visit rate for severe asthma attacks. Re-enter the patient’s zip code, select their age group, then click submit to view their estimated emergency department visit rate. The rate is the number of emergency department visits for asthma per 10,000 individuals, adjusted for the age group.
 
 ### Page Posted on Heroku
-* [Link](https://respiratory-healthcare-tool.herokuapp.com/contact.html)
+* [Link](https://respiratory-healthcare-tool.herokuapp.com/index.html)
 
 ## Resoruces
 ### Astham Data
