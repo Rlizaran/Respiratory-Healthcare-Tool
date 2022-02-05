@@ -10,7 +10,7 @@ def model_load_cancer(variables):
     if variables[-1] == 'hidden':
         return "Please Enter the Zip Code of Patient's First!!!!"
     # loading model
-    elif (variables[0] != int) or (variables[0] != int) or (variables[0] != int):
+    elif (variables[0] == '') or (variables[3] == '') or (variables[5] == ''):
         return "Please First Enter the Zip Code And All Above Information !!!!"
     else:
         final_variables = [variables]
