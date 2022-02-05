@@ -8,10 +8,10 @@ import numpy as np
 def model_load_cancer(variables):
 
     if variables[-1] == 'hidden':
-        return "Please Enter the Zip Code of Patients First!!!!"
+        return "Please Enter the Zip Code of Patient's First!!!!"
     # loading model
     elif (variables[0] != int) or (variables[0] != int) or (variables[0] != int):
-        return "Please First Enter the Zip Code  And All Above Information !!!!"
+        return "Please First Enter the Zip Code And All Above Information !!!!"
     else:
         final_variables = [variables]
         trained_model = joblib.load('model_cancer.pkl')
@@ -27,7 +27,7 @@ def model_load_cancer(variables):
 def model_load_asthma(variables):
     # using standardscaler for transformation
     if variables[1] == 'hidden':
-        return "Please Enter the Zip Code of Patients First!!!"
+        return "Please Enter the Zip Code of Patient's First!!!"
     else:
         scaler = joblib.load('scaler_asthma.pkl')
         X_scaler = scaler.transform([variables])
