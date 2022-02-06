@@ -1,13 +1,11 @@
 # Respiratory Healthcare Tool
+The website is deployed to Heroku at: https://respiratory-healthcare-tool.herokuapp.com/
 
-This tool is designed to assess a patient’s respiratory health based on their local air quality. To begin, enter the patient's zip code. The Air Quality Index category (i.e., Good, Moderate, Unhealthy) for the patient’s region will populate the display.
+In this project, we built a machine learning model that predict risk of lung cancer and asthma emergency department visits using air quality data.
 
-The “Model Prediction for Cancer” model is used to predict a patient's risk of developing lung cancer (Low, Medium, High). Enter the severity of the patient's coughing and fatigue, and rate their diet on a scale of 1 to 8. Use the drop-down menus to select the patient’s smoking, level of obesity, and alcohol use. The air pollution value will automatically populate, based on the zip code that was entered. Click submit to determine the patient’s risk level for developing lung cancer.
+## Background
+Created a web application for physicians to predict a patient's risk of lung cancer, given the air quality in their region, and other risk factors (i.e., smoking, gender, age, diet). If the patient suffers from asthma, physicians can also predict the probability of that patient ending up in the emergency department given the air quality of their region. 
 
-The “Model Prediction for Asthma” model is used to predict the patient’s emergency department visit rate for severe asthma attacks. Re-enter the patient’s zip code, select their age group, then click submit to view their estimated emergency department visit rate. The rate is the number of emergency department visits for asthma per 10,000 individuals, adjusted for the age group.
-
-### Page Posted on Heroku
-* [Link](https://respiratory-healthcare-tool.herokuapp.com/index.html)
 
 ## Resoruces
 ### Astham Data
@@ -17,10 +15,59 @@ The “Model Prediction for Asthma” model is used to predict the patient’s e
 
 ### Cancer Data
 * Ahmad, Ahmad S., and Ali M. Mayya. “A new tool to predict lung cancer based on risk factors.” Heliyon 6.2 (2020): e03402
+* Air Now API for air quality index: https://docs.airnowapi.org/
+
+* Historical air quality index data: https://aqs.epa.gov/aqsweb/airdata/download_files.html#AQI
 
 
-### Contributors
-* [Rodrigo Lizaran Molina](https://github.com/rlizaran)
-* [Sudip Pandey](https://github.com/pandeysudip)
-* [Katlin Bowman Adamczyk](https://github.com/klbowman)
-* [Andrew Ryan Wilson](https://github.com/whywont)
+## Preprocessing: 
+### Scaling the data
+Used `StandardScaler` to scale the training and testing sets. 
+### Converting categorical data to numeric
+Created a training set from the 2019 loans using `pd.get_dummies()` to convert the categorical data to numeric columns. Similarly, create a testing set from the 2020 loans, also using `pd.get_dummies()`
+
+## Model Building
+### Cancer Model
+Created different classification models to predict patient’s risk of developing lung cancer. Different models are:
+* Decision Tree Classifier
+* Random Forest Classifier
+* Extremely Random Trees
+* Boosting- AdaBoostClassifier
+
+### Asthma Model
+Created different Regression models to predict patient’s emergency department visit rate for severe Asthma attacks. Different models are:
+* Linear Regression
+* Support Vector Machine
+* Decision Tree 
+* Random Forest 
+* Extremely Random Trees
+* Boosting- AdaBoostRegressor
+
+## Tuning hyperparamaters for all model
+* Grid Search CV
+* Randomized Search CV
+
+## Trying to improve score by selecting important features 
+Using SelectFromModel to fit the Decision Tree model and get the important features only to fit all the model desceribed above.
+
+
+## Comparing real and predicted value using sample test set
+## Cancer Model
+![Images/landingResize.png](Images/comp1.png)
+
+## Asthma Model
+![Images/landingResize.png](Images/comp2.png)
+
+## Productionization
+Used Flask templating to create a website to predict risk of lung cancer and asthma emergency department visits using air quality data. The saved model was used for the prediction.
+
+Healthcare tool is designed to assess a patient’s respiratory health based on their local air quality. To begin patient's zip code need to enter. The Air Quality Index category (i.e., Good, Moderate, Unhealthy) for the patient’s region will populate the display.
+
+The “Model Prediction for Cancer” model is used to predict a patient's risk of developing lung cancer (Low, Medium, High). 
+
+The “Model Prediction for Asthma” model is used to predict the patient’s emergency department visit rate for severe asthma attacks. 
+
+The website is deployed to Heroku at: https://respiratory-healthcare-tool.herokuapp.com/
+
+![Images6.png](Images/heroku.png)
+
