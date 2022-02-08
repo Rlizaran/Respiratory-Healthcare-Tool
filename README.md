@@ -7,8 +7,8 @@ In this project, we built a machine learning model that predict risk of lung can
 Created a web application for physicians to predict a patient's risk of lung cancer, given the air quality in their region, and other risk factors (i.e., smoking, gender, age, diet). If the patient suffers from asthma, physicians can also predict the probability of that patient ending up in the emergency department given the air quality of their region. 
 
 
-## Resoruces
-### Astham Data
+## Resources
+### Asthma Data
 * California Department of Public Health.
 * [Open Data. Asthma ED Visit Rates](https://data.chhs.ca.gov/dataset/asthma-ed-visit-rates-lghc-indicator-07)
 * [US EPA Air Data. Annually Summary Data](https://aqs.epa.gov/aqsweb/airdata/download_files.html#Annual)
@@ -16,7 +16,6 @@ Created a web application for physicians to predict a patient's risk of lung can
 ### Cancer Data
 * Ahmad, Ahmad S., and Ali M. Mayya. “A new tool to predict lung cancer based on risk factors.” Heliyon 6.2 (2020): e03402
 * Air Now API for air quality index: https://docs.airnowapi.org/
-
 * Historical air quality index data: https://aqs.epa.gov/aqsweb/airdata/download_files.html#AQI
 
 
