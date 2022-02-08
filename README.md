@@ -1,10 +1,10 @@
 # Respiratory Healthcare Tool
 The website is deployed to Heroku at: https://respiratory-healthcare-tool.herokuapp.com/
 
-In this project, we built a machine learning model that predicts a patient's risk of lung cancer and asthma emergency department visits using air quality data.
+In this project, we built a machine learning model to predicts a patient's risk of lung cancer and asthma emergency department visits using air quality data.
 
 ## Background
-Created a web application for physicians to predict a patient's risk of lung cancer, given the air quality in their region, and other risk factors (i.e., smoking, gender, age, diet). If the patient suffers from asthma, physicians can also predict the probability of that patient ending up in the emergency department given the air quality of their region. 
+Created a web application for physicians to predict a patient's risk of lung cancer, given the air quality in their region, and other risk factors (i.e., smoking, gender, age, diet). If the patient suffers from asthma, physicians can also predict their rate of emergency department visits for asthma attacks given the air quality of their region. 
 
 
 ## Resources
