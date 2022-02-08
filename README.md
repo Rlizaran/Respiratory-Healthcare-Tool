@@ -1,7 +1,7 @@
 # Respiratory Healthcare Tool
 The website is deployed to Heroku at: https://respiratory-healthcare-tool.herokuapp.com/
 
-In this project, we built a machine learning model that predict risk of lung cancer and asthma emergency department visits using air quality data.
+In this project, we built a machine learning model that predicts a patient's risk of lung cancer and asthma emergency department visits using air quality data.
 
 ## Background
 Created a web application for physicians to predict a patient's risk of lung cancer, given the air quality in their region, and other risk factors (i.e., smoking, gender, age, diet). If the patient suffers from asthma, physicians can also predict the probability of that patient ending up in the emergency department given the air quality of their region. 
@@ -42,12 +42,12 @@ Created different Regression models to predict patient’s emergency department 
 * Extremely Random Trees
 * Boosting- AdaBoostRegressor
 
-## Tuning hyperparamaters for all model
+## Tuning hyperparameters for all model
 * Grid Search CV
 * Randomized Search CV
 
 ## Trying to improve score by selecting important features 
-Using SelectFromModel to fit the Decision Tree model and get the important features only to fit all the model desceribed above.
+Using SelectFromModel to fit the Decision Tree model and get the important features only to fit all the model described above.
 
 
 ## Comparing real and predicted value using sample test set
@@ -57,7 +57,7 @@ Using SelectFromModel to fit the Decision Tree model and get the important featu
 ## Asthma Model
 ![Images/landingResize.png](Images/comp2.png)
 
-## Productionization
+## Production
 Used Flask templating to create a website to predict risk of lung cancer and asthma emergency department visits using air quality data. The saved model was used for the prediction.
 
 Healthcare tool is designed to assess a patient’s respiratory health based on their local air quality. To begin patient's zip code need to enter. The Air Quality Index category (i.e., Good, Moderate, Unhealthy) for the patient’s region will populate the display.
